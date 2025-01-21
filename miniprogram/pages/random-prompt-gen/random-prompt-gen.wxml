@@ -32,7 +32,7 @@
     <!-- 底部按钮区域 -->
     <view class="footer" style="position: relative; left: 0rpx; top: -39rpx" wx:if="{{currentStage === 3}}" >
         <button class="black-btn" bindtap="handleRegenerate"  style="position: relative; left: -172rpx; top: -6rpx">再来一张</button>
-        <button  bindtap="handleSaveImage" class="icon-only-btn"  style="position: relative; left: -90rpx; top: 0rpx">
+        <button  bindtap="handleSaveImage" class="icon-only-btn"  style="position: relative; left: -50rpx; top: 0rpx">
             <image class="btn-icon" src="/assets/icon/download/download2.png"></image>
         </button>
         <button open-type="share" class="icon-only-btn" style="position: relative; left: 93rpx; top: 0rpx">

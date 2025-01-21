@@ -174,6 +174,7 @@ Page({
     async generateImage_Post(promptText,choiceKey) {
         const getCosImage = (choiceKey) => {
             //cos 上更新后注意 update
+            // 10459
             const minNum = 10000;
             const maxNum = 10079;
             const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
@@ -291,7 +292,7 @@ Page({
             let queryCounting
             let statusZeroCount
             queryCounting = await wx.cloud.callFunction({
-                name: 'DescribeMuskPrompts_Counting',
+                name: 'DescribeMuskPromptsCounting',
                 data: {
                     promptId: promptId
                 }
