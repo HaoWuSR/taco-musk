@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/contactus/contactus",
+    "pages/user-prompt-1/user-prompt-1",
+    "pages/user-prompt-gen/user-prompt-gen",
+    "pages/user-prompt-2/user-prompt-2",
+    "pages/user-prompt-3/user-prompt-3",
+    "pages/user-prompt-4/user-prompt-4",
+    "pages/user-prompt-5/user-prompt-5",
+    "pages/random-prompt-gen/random-prompt-gen"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "AI 新春瑞兽",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.writePhotosAlbum": {
+      "desc": "保存图片到相册需要使用您的相册权限"
+    }
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#ff6b81",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icon/homepage/home5.png",
+        "selectedIconPath": "assets/icon/homepage/home4.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "关于我们",
+        "iconPath": "assets/icon/info/info2.png",
+        "selectedIconPath": "assets/icon/info/info1.png"
+      },
+      {
+        "pagePath": "pages/contactus/contactus",
+        "text": "联系我们",
+        "iconPath": "assets/icon/contactus/contact5.png",
+        "selectedIconPath": "assets/icon/contactus/contact6.png"
+      }
+    ]
+  }
+}

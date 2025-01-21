@@ -1,0 +1,189 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding: 20rpx 0;
+}
+
+.title {
+    font-size: 36rpx;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.subtitle {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 10rpx;
+    display: block;
+}
+
+/* 中间内容区域 */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40rpx 0;
+}
+
+.loading-container {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.loading-circle {
+    width: 100%;
+    height: 100%;
+    border: 6rpx solid #f3f3f3;
+    border-top: 6rpx solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.result-image {
+    width: 600rpx;
+    height: 600rpx;
+    object-fit: contain;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20rpx 0;
+}
+
+/*border-radius 圆角半径
+padding 上下内边距 左右内边距 
+border 边框style
+width 按钮宽度 
+margin 上下外边距 左右外边距 
+1rpx = 屏幕宽度/750 */
+.black-btn {
+    background-color: #000000;
+    color: white;
+    border-radius: 40rpx;
+    padding: 5rpx 40rpx;
+    font-size: 30rpx;
+    border: none;
+    width: 200rpx;
+    margin: 0 20rpx;
+}
+
+.black-btn:active {
+    opacity: 0.8;
+}
+
+.black-btn::after {
+    border: none;
+}
+
+.icon-only-btn {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+    width: 60rpx;
+    height: 70rpx;
+}
+
+.icon-only-btn::after {
+    border: none;
+}
+
+.btn-icon {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.enlarged-image {
+    width: 100%;
+    height: 100vh;
+}
+
+.result-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.result-image:active {
+    transform: scale(0.98);  /* 点击时的微小缩放效果 */
+}
+
+.style-previews {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20rpx;
+    margin: 20rpx auto;
+    padding: 16rpx;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20rpx;
+    box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+    width: fit-content;
+}
+
+.style-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rpx;
+}
+
+.style-label {
+    font-size: 20rpx;
+    color: #666;
+    margin-bottom: 4rpx;
+    line-height: 1;
+}
+
+.style-preview {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 15rpx;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.style-preview:active {
+    transform: scale(0.95);
+}
+
+.style-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2rpx solid rgba(0, 0, 0, 0.1);
+    border-radius: 15rpx;
+}
+
+/* 调整状态文本与缩略图的间距 */
+.status-text {
+    margin-top: 20rpx;
+}

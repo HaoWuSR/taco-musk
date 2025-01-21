@@ -1,0 +1,58 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 简介区域 -->
+  <view class="section">
+    <view class="section-title">小程序介绍</view>
+    <view class="content">
+        <view class="content-paragraph">
+            <text class="bold-text">AI新春瑞兽</text>是一款利用前沿AIGC（人工智能内容生成）技术基于腾讯云MUSK平台打造的创意小程序。它能够根据您的个性化选择，智能生成独具特色的新年专属吉祥物。无论您偏爱哪种风格，这款小程序都能将您的新年愿望转化为栩栩如生的瑞兽形象。生成完成后，您不仅可以保存这些精美的吉祥物作为手机壁纸或社交头像，还能通过微信等平台与亲朋好友分享这份充满科技感的新年祝福。即刻体验AI新春瑞兽，让智能科技为您开启充满好运的新年之旅！
+        </view>
+
+    </view>
+  </view>
+
+
+  <view class="section">
+    <view class="section-title">MUSK介绍</view>
+ <view class="content">
+        <view class="content-paragraph">
+            AI新春瑞兽的核心AI生成能力由腾讯云MUSK（Model Unified Service Kit）模型统一服务套件提供支持。MUSK平台是一个面向企业级用户的模型算力服务平台。依托腾讯集团内部游戏及内容部门强大的中台能力，以及TACO团队多年对AI Infra的积累，MUSK平台具备优秀的服务架构设计以及业内首屈一指的并行加速能力，能为用户提供高效、实惠、稳定、可靠的AI部署服务。
+        </view>
+        <view class="content-paragraph">
+            从产品特性来说，MUSK具备以下优势：
+        </view>
+        <view class="content-list">
+            <view class="list-item">1.支持全面：兼容ComfyUI等多种主流工作流托管</view>
+            <view class="list-item">2.操作便捷：提供开箱即用的AIGC算力接入，为用户免去服务架构、流量弹性、推理性能、复杂部署和运维等难题</view>
+            <view class="list-item">3.高效稳定：具备强大的AIGC应用托管能力，确保稳定、可靠、高效、实惠的AI服务</view>
+            <view class="list-item">4.扩展灵活：和社区保持同步，支持丰富的AIGC模型的快速部署和应用</view>
+            <view class="list-item">5.安全可靠：依托腾讯云强大的基础设施，保障数据安全和系统稳定性</view>
+        </view>
+        <view class="content-paragraph">
+            通过MUSK平台的强大技术支持，AI新春瑞兽小程序得以在数天内完成开发，并为微信用户提供高效、稳定的AI图像生成服务，也为类似应用提供了借鉴思路。后续我们将开源该小程序全部源代码，敬请期待。
+        </view>
+        <view class="content-paragraph">
+            如需访问腾讯云MUSK服务，请联系我们将您的腾讯云账号加入访问白名单。
+        </view>
+      
+
+    </view>
+  </view>
+
+
+  <view class="section">
+    <view class="section-title"> 团队介绍</view>
+    <view class="content">
+        腾讯云TACO团队，多年来专注于AI Infra，致力于为企业提供高效、稳定、易用的AI基础设施和服务。我们拥有丰富的AI工程化经验，专注于AI训练、推理、部署等全流程优化，为企业客户提供端到端的解决方案。主要产品包括：
+        <view class="content-paragraph">
+            TACO-LLM、TAOC-DiT、TACO-Train、TACO-Infer、qGPU、MUSK等，用户可通过公有云、独立私有化、或集成腾讯云智算套件来接入、使用TACO系列产品。我们致力于帮助企业客户实现从模型训练到服务部署的全栈式AI能力。
+        </view>
+    </view>
+  </view>
+
+  <!-- 版权信息 -->
+  <view class="footer">
+    <text>Copyright © 2024 Musk Version 1.0.0</text>
+    <text>All Rights Reserved</text>
+  </view>
+</view>

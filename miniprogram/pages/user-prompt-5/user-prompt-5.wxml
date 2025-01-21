@@ -1,0 +1,37 @@
+<view class="user-prompt">
+  <view class="description-text">请选择吉祥物装饰：</view>
+  <swiper
+    class="prompt-swiper"
+    previous-margin="100rpx"
+    next-margin="100rpx"
+    circular="{{true}}"
+    bindchange="handleSwiperChange"
+    current="{{currentSwiperIndex}}"
+  >
+    <swiper-item wx:for="{{options}}" wx:key="id">
+      <view 
+        class="prompt-option {{selectedOption === item.value ? 'selected' : ''}}"
+        bindtap="handleConfirm"
+        data-option="{{item.value}}"
+        data-index="{{index}}"
+      >
+        <text class="option-text">{{item.text}}</text>
+        <image 
+          class="option-image" 
+          src="{{item.image}}" 
+          mode="aspectFill"
+        />
+      </view>
+    </swiper-item>
+  </swiper>
+
+    <!-- 添加导航按钮 -->
+  <view class="nav-buttons">
+    <view class="nav-btn" bindtap="navigateTo" data-page="type">类型</view>
+    <view class="nav-btn" bindtap="navigateTo" data-page="color">颜色</view>
+    <view class="nav-btn" bindtap="navigateTo" data-page="background">背景</view>
+    <view class="nav-btn" bindtap="navigateTo" data-page="element">元素</view>
+    <view class="nav-btn current">装饰</view>
+  </view>
+
+</view>

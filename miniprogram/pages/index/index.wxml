@@ -1,0 +1,104 @@
+<view class="container">
+
+  <!-- 登录弹窗 -->
+  <view class="login-modal" wx:if="{{showLoginModal}}">
+    <view class="login-content">
+      <view class="login-title">登录提示</view>
+      <view class="login-desc">请登录后继续使用小程序</view>
+      <button class="login-btn" bindtap="handleLogin">立即登录</button>
+    </view>
+  </view>
+
+  <!-- 顶部横幅 -->
+  <view class="banner">
+    <image class="banner-image" src="{{currentBannerImage}}" mode="aspectFill"/>
+  </view>
+
+  <!-- 卡片区域 -->
+  <view class="card-flex">
+    <image 
+        class="nav-image" 
+        src="{{cards[0].image}}" 
+        mode="aspectFill"
+        bindtap="handleCardTap" 
+        data-item="{{cards[0]}}"
+    />
+    <image 
+        class="nav-image" 
+        src="{{cards[1].image}}" 
+        mode="aspectFill"
+        bindtap="handleCardTap" 
+        data-item="{{cards[1]}}"
+    />
+  </view>
+
+  <!-- 添加分界和标题 -->
+  <view class="section-divider">
+    <view class="divider-line"></view>
+    <view class="section-title">发现</view>
+    <view class="divider-line"></view>
+  </view>
+
+
+<!-- TODO 添加标签页切换栏 -->
+<!-- <view class="tab-bar">
+    <view 
+        class="tab-item {{currentTab === 'anime' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="anime">
+        动漫
+    </view>
+    <view 
+        class="tab-item {{currentTab === 'sketch' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="sketch">
+        素描
+    </view>
+    <view 
+        class="tab-item {{currentTab === 'realistic' ? 'active' : ''}}" 
+        bindtap="switchTab" 
+        data-tab="realistic">
+        写实
+    </view>
+</view> -->
+
+  <!-- 在image-grid之前添加遮罩和放大图片容器 -->
+  <view class="mask" wx:if="{{showEnlarged}}" bindtap="handleMaskTap">
+    <view class="enlarged-container" catchtap="preventBubble">
+      <image src="{{enlargedImage.url}}" mode="widthFix"/>
+      <!-- <text class="enlarged-desc">{{enlargedImage.description}}</text> -->
+    </view>
+  </view>
+
+  <view class="image-grid">
+    <block wx:for="{{images}}" wx:key="id">
+        <view class="image-container">
+            <image lazy-load="{{ true }}" 
+                src="{{item.url}}" 
+                mode="aspectFill" 
+                bindtap="handleImageTap" 
+                data-index="{{index}}"
+                class="grid-image"
+            />
+            <view class="like-container">
+                <view class="like-button {{item.isLiked ? 'liked' : ''}}" 
+                      catchtap="handleLike" 
+                      data-index="{{index}}">
+                    <image 
+                        src="{{item.isLiked ? '/assets/images/heart-filled.png' : '/assets/images/heart-outline.png'}}" 
+                        class="like-icon"
+                    />
+                    <text class="like-count">{{item.likeCount}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    </view>  
+    <!-- Loading indicator -->
+  <view class="loading" wx:if="{{isLoading}}">
+    <text>加载中...</text>
+  </view>
+  
+  <view class="load-more" wx:elif="{{!isAllLoaded}}" bindtap="loadMore">加载更多</view>
+  <view class="load-more" wx:else>已展示全部</view>
+</view>

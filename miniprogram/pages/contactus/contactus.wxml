@@ -1,0 +1,43 @@
+<view class="container">
+  <!-- 顶部标题区域 -->
+  <view class="header">
+    <view class="title">联系我们</view>
+    <view class="subtitle">您的反馈是我们进步的动力</view>
+  </view>
+
+  <!-- 反馈表单 -->
+  <view class="feedback-form">
+    <view class="form-item">
+      <view class="label">反馈类型</view>
+      <picker bindchange="handleTypeChange" value="{{typeIndex}}" range="{{feedbackTypes}}">
+        <view class="picker">{{feedbackTypes[typeIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="label">联系方式</view>
+      <input class="input" type="text" placeholder="请输入您的邮箱或手机号" model:value="{{contact}}"/>
+    </view>
+
+    <view class="form-item">
+      <view class="label">反馈内容</view>
+      <textarea class="textarea" placeholder="请详细描述您的问题或建议" model:value="{{content}}" maxlength="500"/>
+      <view class="word-count">{{content.length}}/500</view>
+    </view>
+
+    <button class="submit-btn" bindtap="handleSubmit">提交反馈</button>
+  </view>
+
+  <!-- 联系方式 -->
+  <view class="contact-info">
+    <view class="info-title">其他联系方式</view>
+    <view class="info-item" bindtap="handleCopy" data-text="{{email}}">
+      <image class="info-icon" src="/assets/images/email.png"/>
+      <text>邮箱：{{email}}</text>
+    </view>
+    <!-- <view class="info-item" bindtap="handleCopy" data-text="{{wechat}}">
+      <image class="info-icon" src="/assets/images/wechat.png"/>
+      <text>微信：{{wechat}}</text> -->
+    <!-- </view> -->
+  </view>
+</view> 

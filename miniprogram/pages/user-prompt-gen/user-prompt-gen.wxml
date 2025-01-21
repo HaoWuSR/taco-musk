@@ -1,0 +1,56 @@
+<view class="container">
+    <!-- 顶部标题区域 -->
+    <view class="header">
+        <!-- <text class="title"> {{'你选择了' + selectedStyleName }}</text> -->
+        <text class="title"> {{'您选择了'}}</text>
+        <view class="style-previews">
+            <view class="style-preview-container" wx:for="{{selectedStyleThumbnails}}" wx:key="index">
+                <text class="style-label">{{styleLabels[index]}}</text>
+                <view class="style-preview">
+                    <image 
+                        class="style-thumbnail" 
+                        src="{{item}}" 
+                        mode="aspectFit"
+                    />
+                </view>
+            </view>
+        </view>
+        <view class="status-text {{isLoading ? 'loading' : ''}}">
+            <text class="subtitle">{{stages[currentStage]}}</text>
+        </view>
+    </view>
+
+    <!-- 中间内容区域 -->
+    <view class="content" style="height: 999rpx; display: flex; box-sizing: border-box; width: 606rpx">
+        <view class="loading-container" wx:if="{{isLoading}}">
+            <view class="loading-circle"></view>
+        </view>
+        <image 
+            wx:if="{{!isLoading && imageUrl}}" 
+            src="{{imageUrl}}" 
+            mode="aspectFit" 
+            class="result-image"
+            bindtap="handleImageClick"
+        />
+    </view>
+    <view class="mask" wx:if="{{showEnlarged}}" bindtap="handleMaskTap">
+        <image 
+            src="{{imageUrl}}" 
+            mode="aspectFit" 
+            class="enlarged-image"
+            bindtap="preventBubble"
+        />
+    </view>
+
+    <!-- 底部按钮区域 -->
+    <view class="footer" style="position: relative; left: 0rpx; top: -39rpx"
+    wx:if="{{currentStage === 3}}">
+        <button class="black-btn" bindtap="handleRegenerate" style="position: relative; left: -172rpx; top: -6rpx">再来一张</button>
+        <button bindtap="handleSaveImage" class="icon-only-btn" style="position: relative; left: -90rpx; top: 0rpx">
+            <image class="btn-icon" src="/assets/icon/download/download2.png"></image>
+        </button>
+        <button open-type="share" class="icon-only-btn" style="position: relative; left: 93rpx; top: 0rpx">
+            <image class="btn-icon" src="/assets/icon/share/share1.png"></image>
+        </button>
+    </view>
+</view>
