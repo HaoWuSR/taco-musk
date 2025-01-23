@@ -5,6 +5,7 @@ Page({
     contact: '',
     content: '',
     email: 'taco_musk@tencent.com',
+    qq: '892325525'
   },
 
   handleTypeChange(e) {
@@ -33,11 +34,7 @@ Page({
     }
 
     // 这里添加提交反馈的逻辑
-    console.log({
-      type: feedbackTypes[typeIndex],
-      contact,
-      content
-    })
+
 
     const db = wx.cloud.database()
 

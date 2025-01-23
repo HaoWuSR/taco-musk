@@ -21,12 +21,11 @@
         />
     </view>
     <view class="mask" wx:if="{{showEnlarged}}" bindtap="handleMaskTap">
-        <image 
-            src="{{imageUrl}}" 
-            mode="aspectFit" 
-            class="enlarged-image"
-            bindtap="preventBubble"
-        />
+        <view class="enlarged-container" catchtap="preventBubble">
+            <image src="{{imageUrl}}" 
+                   mode="widthFix"
+                   bindlongpress="handleImageLongPress"/>
+        </view>
     </view>
 
     <!-- 底部按钮区域 -->

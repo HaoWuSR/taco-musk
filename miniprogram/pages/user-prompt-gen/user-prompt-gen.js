@@ -46,7 +46,7 @@ Page({
       
     getPromptByJson:function(selectedStyles) {
         const choiceKey = selectedStyles.join('')
-        console.log('choiceKey:',choiceKey)
+
         const prompt = prompts[choiceKey]
         const temp = 'AAAAA'
         const db = wx.cloud.database()
@@ -98,34 +98,34 @@ Page({
          // 为每个选项定义对应的缩略图
          const thumbnailMaps = {
             1: { // 动物类型
-                'A': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/dragon0.jpg',
-                'B': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/snake0.jpg',
-                'C': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/cat0.jpg',
-                'D': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/dog0.jpg'
+                'A': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/dragon0.jpg',
+                'B': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/snake0.jpg',
+                'C': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/cat0.jpg',
+                'D': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/dog0.jpg'
             },
             2: { // 颜色
-                'A': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项2/red1.jpg',
-                'B': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项2/sky-blue1.jpg',
-                'C': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项2/gold1.jpg',
-                'D': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项2/silver-white1.jpg'
+                'A': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项2/red1.jpg',
+                'B': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项2/sky-blue1.jpg',
+                'C': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项2/gold1.jpg',
+                'D': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项2/silver-white1.jpg'
             },
             3: { // 背景
-                'A': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项3/lakeside0.jpg',
-                'B': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项3/forest0.jpg',
-                'C': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项3/snowy mountain0.jpg',
-                'D': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项3/indoors0.jpg'
+                'A': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项3/lakeside0.jpg',
+                'B': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项3/forest0.jpg',
+                'C': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项3/snowy mountain0.jpg',
+                'D': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项3/indoors0.jpg'
             },
             4: { // 元素
-                'A': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项4/lanterns0.jpg',
-                'B': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项4/fireworks0.jpg',
-                'C': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项4/gold ingots0.jpg',
-                'D': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项4/flowers0.jpg'
+                'A': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项4/lanterns0.jpg',
+                'B': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项4/fireworks0.jpg',
+                'C': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项4/gold ingots0.jpg',
+                'D': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项4/flowers0.jpg'
             },
             5: { // 配饰
-                'A': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项5/scarf0.jpg',
-                'B': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项5/hat0.jpg',
-                'C': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项5/sunglasse0.jpg',
-                'D': 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项5/bow tie0.jpg'
+                'A': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项5/scarf0.jpg',
+                'B': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项5/hat0.jpg',
+                'C': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项5/sunglasse0.jpg',
+                'D': 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项5/bow tie0.jpg'
             }
         };
 
@@ -133,7 +133,7 @@ Page({
         const thumbnails = selectedStyle.map((choice, index) => 
             thumbnailMaps[index + 1][choice] || '/assets/images/default.jpg'
         );
-        console.log('thumbnails: ', thumbnails)
+       
         this.setData({
             selectedStyleThumbnails: thumbnails, // 存储所有缩略图
             isLoading: true
@@ -142,14 +142,11 @@ Page({
             // 获取提示词
         const [promptText,choiceKey] = this.getPromptByJson(selectedStyle, choiceKey)
             // 获取中文描述
-        // const description = this.formatStyleDescription(selectedStyle)
-        console.log('prompt',promptText)
+
             this.setData({
                 selectedStyleName: promptText
             })
             
-            // 使用提示词生成图片
-            // this.generatePrompt_wget(prompt || description) // 如果没有找到对应提示词，使用中文描述作为备选
             this.generateImage_Post(promptText,choiceKey)
     },
     handleRegenerate: function() {
@@ -176,16 +173,16 @@ Page({
             //cos 上更新后注意 update
             // 10459
             const minNum = 10000;
-            const maxNum = 10079;
+            const maxNum = 10459;
             const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
             const cos_images_url= `https://taco-1251783334.cos.ap-shanghai.myqcloud.com/taco_musk/data/musk_results/musk_${choiceKey}_${randomNum}_00001_.png` ;
-            console.log('备用图片 url:',cos_images_url)
+ 
             return cos_images_url
         }
         // 模拟正常11s 生成结果
         const simulateNormalGeneration = async () => {
             const NORMAL_GENERATION_TIME = 11000  
-            console.log('使用备用方案，等待模拟生成时间...')
+          
             await new Promise(resolve => setTimeout(resolve, NORMAL_GENERATION_TIME))
         }
 
@@ -194,15 +191,14 @@ Page({
                 if (!url) {
                     throw new Error('URL 不能为空')
                 }
-        
-                console.log('开始下载图片:', url)
+
                 
                 return new Promise((resolve, reject) => {
                     wx.downloadFile({
                         url: url,
                         success: function(res) {
                             if (res.statusCode === 200) {
-                                console.log('下载成功，临时路径:', res.tempFilePath)
+        
                                 resolve(res.tempFilePath)
                             } else {
                                 reject(new Error('下载失败，状态码: ' + res.statusCode))
@@ -246,8 +242,7 @@ Page({
         })
         //优化下面结构，将 promptID, url, download逻辑更清楚呈现，便于容错机制
  
-            // Begin
-            console.log('开始生成图片, 提示词:', promptText)
+
             // 1. Get openID
             const { result: { openid } } = await wx.cloud.callFunction({
                 name: 'getOpenId'
@@ -261,7 +256,7 @@ Page({
             }).get()
             let generateCount = 0
             if (userRecord.data.length === 0) {
-                console.log('创建新用户记录')
+              
                 try {
                     await db.collection('users').add({
                         data: {
@@ -281,11 +276,11 @@ Page({
             const total_bucket = 200
             const bucket_size = 10
             const bucketIndex = Math.floor(generateCount % total_bucket)
-            console.log('当前桶组索引:', bucketIndex)
+            
             const minSeed = bucketIndex * bucket_size
             const maxSeed = minSeed + (bucket_size - 1)
             const seed = Math.floor(Math.random() * (maxSeed - minSeed + 1)) + minSeed
-            console.log(`使用第 ${bucketIndex + 1} 组的随机数:`, seed, `(范围: ${minSeed}-${maxSeed})`)
+            
             // 4. Get PromptID by CloudFunction
             //musk or cos 
             let promptId
@@ -297,18 +292,17 @@ Page({
                     promptId: promptId
                 }
             })
-            statusZeroCount = queryCounting.result.data.MuskPromptInfos.filter(
-                info => info.Status === 0
-            ).length;
 
+            const infos = queryCounting?.result?.data?.MuskPromptInfos || [];
+            statusZeroCount = infos.filter(info => (info && typeof info === 'object' && info.Status === 0)).length;
 
             if (statusZeroCount >= 10){
                 console.log(`当前处理的请求数为${statusZeroCount},系统繁忙，使用备用图片`)
 
-                MuskUrl = getCosImage(choiceKey)
 
             } else {
                 console.log(`当前处理的请求数为${statusZeroCount},系统空闲，调用 musk 平台`)
+
             try{
             const result = await wx.cloud.callFunction({
                 name: 'generateImage',
@@ -318,9 +312,10 @@ Page({
                 }
                 })
                 promptId = result.result.promptId
-                console.log('GeneratePromptId is :',promptId)
-            }catch(error){
+                
+            } catch(error){
                 console.error('获取promptId失败，使用备用图片')
+                await this.updateMuskCosStats('cos');
                 await simulateNormalGeneration()  
                 const cosUrl = getCosImage(choiceKey)
                 const tempFilePath = await downloadImage(cosUrl)
@@ -332,7 +327,7 @@ Page({
                     filePath: tempFilePath
                 });
 
-                console.log('上传成功，fileID:', uploadResult.fileID);
+                
                 this.setData({
                     imageUrl: tempFilePath,
                     isLoading: false,
@@ -367,7 +362,7 @@ Page({
                     _openid: openid
                 }).get()
                 const newGenerateCount = updatedUserRecord.data[0].generateCount
-                console.log(`用户第 ${newGenerateCount} 次生成图片`)
+
                 return
             }
         }
@@ -375,7 +370,6 @@ Page({
             let MuskUrl
             let retryCount = 0
             try {
-                
                 const maxRetries = 9
                 
                 while (retryCount < maxRetries) {
@@ -386,14 +380,14 @@ Page({
                             promptId: promptId
                         }
                     })
-                    console.log('轮询询结果:', queryResult)
+
                     const taskStatus = queryResult.result.data.MuskPromptInfos[0].Status
-                    console.log('任务状态:', taskStatus)
+
 
                 if (taskStatus === 1) {   
                     //musk 返回成功，获得 url ，更新 count
                     MuskUrl = queryResult.result.imageUrl[0]
-                    console.log('url:', MuskUrl)
+                    await this.updateMuskCosStats('musk');
                     break 
                 } else if (taskStatus === 3) {  // 失败
                     throw new Error('生成失败')
@@ -408,6 +402,7 @@ Page({
             }
         } catch (error) {
             console.error('获取图片URL失败，使用备用图片')
+            await this.updateMuskCosStats('cos');
             const remainingTime = 11000 - (retryCount * 1000) 
             if (remainingTime > 0) {
                 await new Promise(resolve => setTimeout(resolve, remainingTime))
@@ -422,7 +417,7 @@ Page({
                 filePath: tempFilePath
             });
     
-            console.log('上传成功，fileID:', uploadResult.fileID);
+    
             this.setData({
                 imageUrl: tempFilePath,
                 isLoading: false,
@@ -457,12 +452,12 @@ Page({
                 _openid: openid
             }).get()
             const newGenerateCount = updatedUserRecord.data[0].generateCount
-            console.log(`用户第 ${newGenerateCount} 次生成图片`)
+
             return
         }
         // 6. Get Image by Url 
         try {
-            console.log('使用 MuskUrl 下载')
+
             const tempFilePath = await downloadImage(MuskUrl)
 
                         // save 到云储存
@@ -473,7 +468,7 @@ Page({
                             filePath: tempFilePath
                         });
                 
-                        console.log('上传成功，fileID:', uploadResult.fileID);
+                        
 
             this.setData({
                 imageUrl: tempFilePath,
@@ -510,10 +505,11 @@ Page({
                 _openid: openid
             }).get()
             const newGenerateCount = updatedUserRecord.data[0].generateCount
-            console.log(`用户第 ${newGenerateCount} 次生成图片`)
+        
         } catch (error) {
             console.error('使用 Url下载图片失败，使用备用图片')
             const remainingTime = 11000 - (retryCount * 1000)  // 计算剩余等待时间
+            await this.updateMuskCosStats('cos');
             if (remainingTime > 0) {
                 await new Promise(resolve => setTimeout(resolve, remainingTime))
             }
@@ -527,7 +523,7 @@ Page({
                 filePath: tempFilePath
             });
     
-            console.log('上传成功，fileID:', uploadResult.fileID);
+          
 
             this.setData({
                 imageUrl: tempFilePath,
@@ -563,7 +559,7 @@ Page({
                 _openid: openid
             }).get()
             const newGenerateCount = updatedUserRecord.data[0].generateCount
-            console.log(`用户第 ${newGenerateCount} 次生成图片`)
+       
         }
     
     },
@@ -596,7 +592,7 @@ Page({
                             if (res.confirm) {
                                 wx.openSetting({
                                     success: (settingRes) => {
-                                        console.log('设置结果:', settingRes)
+                               
                                     }
                                 })
                             }
@@ -621,18 +617,18 @@ Page({
     },
     onShareAppMessage() {
         const promise = new Promise(resolve => {
-            // 这里的代码会立即执行
+ 
             setTimeout(() => {
-                resolve({  // 1秒后执行 resolve
+                resolve({  
                     title: '快来看看我在AI新春瑞兽生成的吉祥物！',
                     path: '/pages/index/index',
                     imageUrl: this.data.imageUrl
                 })
-            }, 3000)  // 1秒
+            }, 500) 
         })
     
         return {
-            title: '默认标题',  // 如果超过3秒才resolve，就会用这个标题
+            title: '快来看看我在AI新春瑞兽生成的吉祥物！',  
             path: '/pages/index/index/',
             imageUrl: this.data.imageUrl,
             promise
@@ -695,27 +691,81 @@ Page({
     onReachBottom() {
 
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-        const promise = new Promise(resolve => {
-            // 这里的代码会立即执行
-            setTimeout(() => {
-                resolve({  // 1秒后执行 resolve
-                    title: '快来看看我在AI新春瑞兽生成的吉祥物！',
-                    path: '/pages/index/index',
-                    imageUrl: this.data.imageUrl
-                })
-            }, 3000)  // 1秒
-        })
+    async updateMuskCosStats(type) {
+        try {
+            const db = wx.cloud.database();
+            const _ = db.command;
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);  // 设置为当天0点
     
-        return {
-            title: '默认标题',  // 如果超过3秒才resolve，就会用这个标题
-            path: '/pages/index/index/',
-            imageUrl: this.data.imageUrl,
-            promise
+            // 查找今天的记录
+            const result = await db.collection('MuskCosCounting').where({
+                date: today
+            }).get();
+    
+            if (result.data.length > 0) {
+                // 更新今天的计数
+                await db.collection('MuskCosCounting').doc(result.data[0]._id).update({
+                    data: {
+                        [type === 'cos' ? 'cosCount' : 'muskCount']: _.inc(1)
+                    }
+                });
+            } else {
+                // 创建今天的新记录
+                await db.collection('MuskCosCounting').add({
+                    data: {
+                        date: today,
+                        cosCount: type === 'cos' ? 1 : 0,
+                        muskCount: type === 'musk' ? 1 : 0
+                    }
+                });
+            }
+        } catch (error) {
+            console.error('更新统计数据失败:', error);
         }
     },
+
+    handleImageLongPress() {
+        const that = this;
+        wx.showActionSheet({
+            itemList: ['保存图片'],
+            success(res) {
+                if (res.tapIndex === 0) {
+                    wx.getSetting({
+                        success(res) {
+                            if (!res.authSetting['scope.writePhotosAlbum']) {
+                                wx.authorize({
+                                    scope: 'scope.writePhotosAlbum',
+                                    success() {
+                                        that.saveImage();
+                                    },
+                                    fail() {
+                                        wx.showModal({
+                                            title: '提示',
+                                            content: '需要您授权保存图片到相册',
+                                            success(res) {
+                                                if (res.confirm) {
+                                                    wx.openSetting();
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            } else {
+                                that.saveImage();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    },
+    saveImage() {
+        wx.showLoading({
+            title: '保存中...',
+        });
+
+        this.handleSaveImage()
+    },    
+    
 })

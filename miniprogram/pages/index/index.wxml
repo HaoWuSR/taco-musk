@@ -1,4 +1,7 @@
-<view class="container">
+<view class="container" 
+      bindtouchstart="handleTouchStart" 
+      bindtouchmove="handleTouchMove" 
+      bindtouchend="handleTouchEnd">
 
   <!-- 登录弹窗 -->
   <view class="login-modal" wx:if="{{showLoginModal}}">
@@ -65,8 +68,9 @@
   <!-- 在image-grid之前添加遮罩和放大图片容器 -->
   <view class="mask" wx:if="{{showEnlarged}}" bindtap="handleMaskTap">
     <view class="enlarged-container" catchtap="preventBubble">
-      <image src="{{enlargedImage.url}}" mode="widthFix"/>
-      <!-- <text class="enlarged-desc">{{enlargedImage.description}}</text> -->
+      <image src="{{enlargedImage.url}}" 
+             mode="widthFix"
+             bindlongpress="handleImageLongPress"/>
     </view>
   </view>
 
@@ -99,6 +103,8 @@
     <text>加载中...</text>
   </view>
   
-  <view class="load-more" wx:elif="{{!isAllLoaded}}" bindtap="loadMore">加载更多</view>
-  <view class="load-more" wx:else>已展示全部</view>
+  <view class="load-more {{isPullingUp ? 'pulling' : ''}}" wx:else>
+    {{isPullingUp ? (isAllLoaded ? '松开立即刷新' : '松开加载更多') : 
+      (isAllLoaded ? '继续上拉刷新页面' : '继续上拉加载更多')}}
+  </view>
 </view>

@@ -8,25 +8,25 @@ Page({
           id: 1,
           value: 'A',
           text: 'A. 中国龙',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/dragon0.jpg'
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/dragon0.jpg'
         },
         {
           id: 2,
           value: 'B',
           text: 'B. 蛇',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/snake0.jpg'
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/snake0.jpg'
         },
         {
           id: 3,
           value: 'C',
           text: 'C. 猫',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/cat0.jpg'
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/cat0.jpg'
         },
         {
           id: 4,
           value: 'D',
           text: 'D. 狗',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/选项1/dog0.jpg'
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/选项1/dog0.jpg'
         }
       ],
       pageIndex: 1
@@ -86,18 +86,13 @@ Page({
             app.globalData.selectedStyles.push(currentChoice)
     }
     
-    console.log('当前所有选择：', app.globalData.selectedStyles)
+ 
   
     //TODO 根据当前问题索引决定跳转到哪个页面
     //由于微信只能跳转 10次 pages，故在 user-prompt-gen 中的跳转用 wx.relaunch 来代替
         wx.redirectTo({
             url: '/pages/user-prompt-2/user-prompt-2'
-        })
-  
-        
-        console.log('当前所有选择：', app.globalData.selectedStyles)
-    
-    
+        }) 
       
     },
   
@@ -131,11 +126,10 @@ Page({
               currentSwiperIndex: currentIndex
             });
   
-            console.log('显示之前的选择：', this.data.selectedOption)
+            
         }
   
-        console.log('页面加载，当前问题索引：', this.data.pageIndex)
-        console.log('当前所有选择：', app.globalData.selectedStyles)
+
     },
   
     navigateTo: function(e) {

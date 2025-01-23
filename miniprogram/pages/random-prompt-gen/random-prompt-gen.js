@@ -1,5 +1,4 @@
 import {prompts} from '../user-prompt-gen/prompt.js'
-import Counter from '../../callcounter'
 
 Page({
 
@@ -21,7 +20,7 @@ Page({
       
       getPromptByJson:function() {
         const choiceKey = Array(5).fill(0).map(() => 'ABCD'[Math.floor(Math.random() * 4)]).join('')
-        console.log('choiceKey:',choiceKey)
+
         const prompt = prompts[choiceKey]
         const temp = 'AAAAA'
         if (!prompt) {
@@ -64,16 +63,16 @@ Page({
             //cos 上更新后注意 update
             //10459
             const minNum = 10000;
-            const maxNum = 10079;
+            const maxNum = 10459;
             const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
             const cos_images_url= `https://taco-1251783334.cos.ap-shanghai.myqcloud.com/taco_musk/data/musk_results/musk_${choiceKey}_${randomNum}_00001_.png` ;
-            console.log('备用图片 url:',cos_images_url)
+       
             return cos_images_url
         }
         // 模拟正常11s 生成结果
         const simulateNormalGeneration = async () => {
             const NORMAL_GENERATION_TIME = 11000  
-            console.log('使用备用方案，等待模拟生成时间...')
+
             await new Promise(resolve => setTimeout(resolve, NORMAL_GENERATION_TIME))
         }
     
@@ -83,14 +82,14 @@ Page({
                     throw new Error('URL 不能为空')
                 }
         
-                console.log('开始下载图片:', url)
+
                 
                 return new Promise((resolve, reject) => {
                     wx.downloadFile({
                         url: url,
                         success: function(res) {
                             if (res.statusCode === 200) {
-                                console.log('下载成功，临时路径:', res.tempFilePath)
+                           
                                 resolve(res.tempFilePath)
                             } else {
                                 reject(new Error('下载失败，状态码: ' + res.statusCode))
@@ -134,8 +133,8 @@ Page({
         })
         //优化下面结构，将 promptID, url, download逻辑更清楚呈现，便于容错机制
  
-            // Begin
-            console.log('开始生成图片, 提示词:', promptText)
+
+
             // 1. Get openID
             const { result: { openid } } = await wx.cloud.callFunction({
                 name: 'getOpenId'
@@ -149,7 +148,7 @@ Page({
             }).get()
             let generateCount = 0
             if (userRecord.data.length === 0) {
-                console.log('创建新用户记录')
+
                 try {
                     await db.collection('users').add({
                         data: {
@@ -169,37 +168,36 @@ Page({
             const total_bucket = 200
             const bucket_size = 10
             const bucketIndex = Math.floor(generateCount % total_bucket)
-            console.log('当前桶组索引:', bucketIndex)
+
             const minSeed = bucketIndex * bucket_size
             const maxSeed = minSeed + (bucket_size - 1)
             const seed = Math.floor(Math.random() * (maxSeed - minSeed + 1)) + minSeed
-            console.log(`使用第 ${bucketIndex + 1} 组的随机数:`, seed, `(范围: ${minSeed}-${maxSeed})`)
+
             // 4. Get PromptID by CloudFunction
             //musk or cos 
             let promptId
             let queryCounting
             let statusZeroCount
+
             queryCounting = await wx.cloud.callFunction({
                 name: 'DescribeMuskPromptsCounting',
                 data: {
                     promptId: promptId
                 }
             })
-            console.log(queryCounting)
-            statusZeroCount = queryCounting.result.data.MuskPromptInfos.filter(
-                info => info.Status === 0
-            ).length;
-
+            
+            const infos = queryCounting?.result?.data?.MuskPromptInfos || [];
+            statusZeroCount = infos.filter(info => (info && typeof info === 'object' && info.Status === 0)).length;
 
             if (statusZeroCount >= 10){
                 console.log(`当前处理的请求数为${statusZeroCount},系统繁忙，使用备用图片`)
 
-                MuskUrl = getCosImage(choiceKey)
 
             } else {
                 console.log(`当前处理的请求数为${statusZeroCount},系统空闲，调用 musk 平台`)
+                
             try{
-            const result = await wx.cloud.callFunction({
+                const result = await wx.cloud.callFunction({
                 name: 'generateImage',  
                 data: {
                     promptText: promptText,
@@ -207,9 +205,10 @@ Page({
                 }
                 })
                 promptId = result.result.promptId
-                console.log('GeneratePromptId is :',promptId)
-            }catch(error){
+
+            } catch(error){
                 console.error('获取promptId失败，使用备用图片')
+                await this.updateMuskCosStats('cos');
                 await simulateNormalGeneration()  
                 const cosUrl = getCosImage(choiceKey)
                 const tempFilePath = await downloadImage(cosUrl)
@@ -221,7 +220,7 @@ Page({
                     filePath: tempFilePath
                 });
         
-                console.log('上传成功，fileID:', uploadResult.fileID);
+                
                 this.setData({
                     imageUrl: tempFilePath,
                     isLoading: false,
@@ -257,7 +256,7 @@ Page({
                     _openid: openid
                 }).get()
                 const newGenerateCount = updatedUserRecord.data[0].generateCount
-                console.log(`用户第 ${newGenerateCount} 次生成图片`)
+                
                 return
             }
         }
@@ -275,14 +274,14 @@ Page({
                                 promptId: promptId
                             }
                         })
-                        console.log('轮询询结果:', queryResult)
+                        
                         const taskStatus = queryResult.result.data.MuskPromptInfos[0].Status
-                        console.log('任务状态:', taskStatus)
+                        
     
                     if (taskStatus === 1) {   
                         //musk 返回成功，获得 url ，更新 count
                         MuskUrl = queryResult.result.imageUrl[0]
-                        console.log('url:', MuskUrl)
+                        await this.updateMuskCosStats('musk');
                         break 
                     } else if (taskStatus === 3) {  // 失败
                         throw new Error('生成失败')
@@ -297,6 +296,7 @@ Page({
                 } 
             } catch (error) {
                 console.error('获取图片URL失败，使用备用图片')
+                await this.updateMuskCosStats('cos');
                 const remainingTime = 11000 - (retryCount * 1000)  
                 if (remainingTime > 0) {
                     await new Promise(resolve => setTimeout(resolve, remainingTime))
@@ -311,7 +311,7 @@ Page({
                     filePath: tempFilePath
                 });
         
-                console.log('上传成功，fileID:', uploadResult.fileID);
+                
                 this.setData({
                     imageUrl: tempFilePath,
                     isLoading: false,
@@ -347,12 +347,12 @@ Page({
                     _openid: openid
                 }).get()
                 const newGenerateCount = updatedUserRecord.data[0].generateCount
-                console.log(`用户第 ${newGenerateCount} 次生成图片`)
+                
                 return
             }
         // 6. Get Image by Url 
         try {
-            console.log('使用 MuskUrl 下载,',MuskUrl)
+            
             
             const tempFilePath = await downloadImage(MuskUrl)
             // save 到云储存
@@ -363,7 +363,7 @@ Page({
                 filePath: tempFilePath
             });
     
-            console.log('上传成功，fileID:', uploadResult.fileID);
+            
             this.setData({
                 imageUrl: tempFilePath,
                 isLoading: false,
@@ -400,10 +400,11 @@ Page({
                 _openid: openid
             }).get()
             const newGenerateCount = updatedUserRecord.data[0].generateCount
-            console.log(`用户第 ${newGenerateCount} 次生成图片`)
+            
         } catch (error) {
             console.error('使用 Url下载图片失败，使用备用图片')
             const remainingTime = 11000 - (retryCount * 1000)  // 计算剩余等待时间
+            await this.updateMuskCosStats('cos');
             if (remainingTime > 0) {
                 await new Promise(resolve => setTimeout(resolve, remainingTime))
             }
@@ -417,7 +418,7 @@ Page({
                 filePath: tempFilePath
             });
     
-            console.log('上传成功，fileID:', uploadResult.fileID);
+            
 
             this.setData({
                 imageUrl: tempFilePath,
@@ -454,7 +455,7 @@ Page({
                 _openid: openid
             }).get()
             const newGenerateCount = updatedUserRecord.data[0].generateCount
-            console.log(`用户第 ${newGenerateCount} 次生成图片`)
+            
         }
     
     },
@@ -487,7 +488,7 @@ Page({
                             if (res.confirm) {
                                 wx.openSetting({
                                     success: (settingRes) => {
-                                        console.log('设置结果:', settingRes)
+                                       
                                     }
                                 })
                             }
@@ -510,18 +511,18 @@ Page({
     },
     onShareAppMessage() {
         const promise = new Promise(resolve => {
-            // 这里的代码会立即执行
+            
             setTimeout(() => {
-                resolve({  // 1秒后执行 resolve
+                resolve({  
                     title: '快来看看我在AI新春瑞兽生成的吉祥物！',
                     path: '/pages/index/index',
                     imageUrl: this.data.imageUrl
                 })
-            }, 3000)  // 1秒
+            }, 500)  
         })
     
         return {
-            title: '默认标题',  // 如果超过3秒才resolve，就会用这个标题
+            title: '快来看看我在AI新春瑞兽生成的吉祥物！',  
             path: '/pages/index/index/',
             imageUrl: this.data.imageUrl,
             promise
@@ -584,6 +585,83 @@ Page({
     onReachBottom() {
 
     },
+async updateMuskCosStats(type) {
+    try {
+        const db = wx.cloud.database();
+        const _ = db.command;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);  // 设置为当天0点
+
+        // 查找今天的记录
+        const result = await db.collection('MuskCosCounting').where({
+            date: today
+        }).get();
+
+        if (result.data.length > 0) {
+            // 更新今天的计数
+            await db.collection('MuskCosCounting').doc(result.data[0]._id).update({
+                data: {
+                    [type === 'cos' ? 'cosCount' : 'muskCount']: _.inc(1)
+                }
+            });
+        } else {
+            // 创建今天的新记录
+            await db.collection('MuskCosCounting').add({
+                data: {
+                    date: today,
+                    cosCount: type === 'cos' ? 1 : 0,
+                    muskCount: type === 'musk' ? 1 : 0
+                }
+            });
+        }
+    } catch (error) {
+        console.error('更新统计数据失败:', error);
+    }
+},
+
+handleImageLongPress() {
+    const that = this;
+    wx.showActionSheet({
+      itemList: ['保存图片'],
+      success(res) {
+        if (res.tapIndex === 0) {
+          wx.getSetting({
+            success(res) {
+              if (!res.authSetting['scope.writePhotosAlbum']) {
+                wx.authorize({
+                  scope: 'scope.writePhotosAlbum',
+                  success() {
+                    that.saveImage();
+                  },
+                  fail() {
+                    wx.showModal({
+                      title: '提示',
+                      content: '需要您授权保存图片到相册',
+                      success(res) {
+                        if (res.confirm) {
+                          wx.openSetting();
+                        }
+                      }
+                    });
+                  }
+                });
+              } else {
+                that.saveImage();
+              }
+            }
+          });
+        }
+      }
+    });
+  },
+
+  saveImage() {
+    wx.showLoading({
+      title: '保存中...',
+    });
+
+    this.handleSaveImage()
+  },
 
 
 })

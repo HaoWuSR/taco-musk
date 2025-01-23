@@ -35,9 +35,9 @@
       <image class="info-icon" src="/assets/images/email.png"/>
       <text>邮箱：{{email}}</text>
     </view>
-    <!-- <view class="info-item" bindtap="handleCopy" data-text="{{wechat}}">
-      <image class="info-icon" src="/assets/images/wechat.png"/>
-      <text>微信：{{wechat}}</text> -->
-    <!-- </view> -->
+    <view class="info-item" bindtap="handleCopy" data-text="{{qq}}">
+      <image class="info-icon" src="/assets/images/QQ.png"/>
+      <text>QQ群：{{qq}}</text>
+    </view>
   </view>
 </view> 

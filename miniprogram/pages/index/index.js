@@ -1,57 +1,58 @@
 Page({
     data: {
+        // 
         bannerImages: [
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4769.JPG',
-            "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4770.JPG",
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4771.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4772.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4773.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4774.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4775.JPG',
-            "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4776.JPG",
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4777.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4778.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4779.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4780.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4781.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4782.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4783.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4784.JPG',
-            'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/main_page_top/IMG_4785.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4769.JPG',
+            "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4770.JPG",
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4771.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4772.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4773.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4774.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4775.JPG',
+            "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4776.JPG",
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4777.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4778.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4779.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4780.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4781.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4782.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4783.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4784.JPG',
+            'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/main_page_top/IMG_4785.JPG',
         ],
         currentBannerImage: '',
       cards: [
         {
           id: 1,
           title: '专属生成',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/cards/cards0.png',
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/cards/cards0.png',
           path: '/pages/user-prompt-1/user-prompt-1'  
         },
         {
           id: 2,
           title: '随机生成',
-          image: 'cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/cards/cards1.png',
+          image: 'cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/cards/cards1.png',
           path: '/pages/random-prompt-gen/random-prompt-gen'    
         }
       ],
       images: [],
       preImagesURL: [
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_gold_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_gold_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_red_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_red_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_silver-white_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_silver-white_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_sky-blue_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/Chinesedragon_sky-blue_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_gold_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_gold_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_red_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_red_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_silver-white_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_silver-white_lakeside_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_sky-blue_ice mountains_0.jpg",
-        "cloud://musk-clouddev-5g028di82f9a906c.6d75-musk-clouddev-5g028di82f9a906c-1336131283/小程序素材/预生成/snake_sky-blue_lakeside_0.jpg"
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_gold_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_gold_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_red_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_red_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_silver-white_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_silver-white_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_sky-blue_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/Chinesedragon_sky-blue_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_gold_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_gold_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_red_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_red_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_silver-white_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_silver-white_lakeside_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_sky-blue_ice mountains_0.jpg",
+        "cloud://taco-musk-2gnz7e935499fab9.7461-taco-musk-2gnz7e935499fab9-1337769146/小程序素材/预生成/snake_sky-blue_lakeside_0.jpg"
       ],
       pageSize: 6,
       currentPage: 1,
@@ -61,6 +62,10 @@ Page({
       openid:null,
       isLoggedIn:false,
       isLoading: false,
+      isPullingUp: false,
+      startY: 0,  // 记录触摸开始的Y坐标
+      moveY: 0,   // 记录移动的Y坐标
+      isNearBottom: false,  // 新增：是否接近底部
     },
   
     handleCardTap: function(e) {
@@ -195,12 +200,76 @@ Page({
         }
     },
 
-    onReachBottom: function() {
-      this.loadMore();    
+// 监听页面滚动
+onPageScroll: function(e) {
+    wx.createSelectorQuery()
+        .selectViewport()
+        .scrollOffset()
+        .exec((res) => {
+            const scrollTop = e.scrollTop
+            const windowHeight = wx.getWindowInfo().windowHeight
+            const documentHeight = res[0].scrollHeight
+            
+            // 增加到底部的距离阈值到200px
+            const isNearBottom = (documentHeight - scrollTop - windowHeight) < 200
+            
+            if (isNearBottom !== this.data.isNearBottom) {
+                this.setData({ isNearBottom: isNearBottom })
+            }
+        })
+},
+
+// 触摸开始
+handleTouchStart: function(e) {
+    // 只在接近底部时记录触摸起始位置
+    if (this.data.isNearBottom) {
+        this.setData({
+            startY: e.touches[0].clientY
+        })
+    } 
     },
-    //TODO 
-    onUnload: async function() {
-        console.log('Onunload:')
+    // 触摸移动
+    handleTouchMove: function(e) {
+        if (this.data.isNearBottom && this.data.startY) {
+            const moveY = e.touches[0].clientY
+            const diff = this.data.startY - moveY
+
+            // 增加触发提示的距离到80px
+            if (diff > 80) {
+                this.setData({ 
+                    isPullingUp: true,
+                    moveY: moveY
+                })
+            } else {
+                this.setData({ 
+                    isPullingUp: false,
+                    moveY: moveY
+                })
+            }
+        }
+    },
+
+    // 触摸结束
+    handleTouchEnd: async function() {
+        if (this.data.isPullingUp && this.data.isNearBottom) {
+            this.setData({ 
+                isPullingUp: false,
+                startY: 0
+            })
+            if (this.data.isAllLoaded) {
+                // 已加载完全部，执行刷新
+                await this.loadImagesFromCloud()
+                wx.pageScrollTo({
+                    scrollTop: 0,
+                    duration: 300
+                })
+            } else {
+                // 还有更多内容，加载更多
+                this.loadMore()
+            }
+        }
+
+
 
     },
 
@@ -210,49 +279,36 @@ Page({
         this.setData({
           currentBannerImage: this.data.bannerImages[randomIndex]
         })
-        console.log()
+
         await this.loadImagesFromCloud()
 
       },
 
     // 从云存储获取图片并加载点赞信息
     async loadImagesFromCloud() {
-        const timePoints = {
-            start: Date.now(),
-            getFiles: 0,
-            getUrlsAndLikes: 0,
-            processData: 0,
-            end: 0
-        };
         try {
-            //TODO 
-            this.setData({ images:[], isLoading: true })
+            this.setData({ images:[], isLoading: true})
             
-            // 1. 获取随机文件列表 (限制为20个以提高加载速度)
-            console.time('获取文件列表');
-            timePoints.getFilesStart = Date.now();
+            // 1. 获取随机文件列表 (限制为18个以提高加载速度)
             const db = wx.cloud.database()
             const { list: files } = await db.collection('showPool_files')
                 .aggregate()
                 .sample({
-                    size: 20
+                    size: 18
                 })
                 .end()
                 
             if (!files || files.length === 0) {
                 throw new Error('No files found')
             }
-            timePoints.getFiles = Date.now();
-            console.timeEnd('获取文件列表');
-            console.log(`获取文件列表耗时: ${timePoints.getFiles - timePoints.getFilesStart}ms`);
+
 
 
             
             // 2. 批量获取文件URL和点赞信息
             const fileIds = files.map(file => file.fileID)
             const fileNames = fileIds.map(id => id.split('/').pop())
-            console.time('获取URL和点赞信息');
-            timePoints.getUrlsAndLikesStart = Date.now();
+
 
             // 并行执行这两个操作以节省时间
             const [tempUrlResult, likeResult] = await Promise.all([
@@ -263,13 +319,10 @@ Page({
                     })
                     .get()
             ])
-            timePoints.getUrlsAndLikes = Date.now();
-            console.timeEnd('获取URL和点赞信息');
-            console.log(`获取URL和点赞信息耗时: ${timePoints.getUrlsAndLikes - timePoints.getUrlsAndLikesStart}ms`);
+
 
             // 3. 创建点赞信息映射
-            console.time('处理点赞数据');
-            timePoints.processDataStart = Date.now();
+
 
             const likeMap = new Map(
                 likeResult.data.map(item => [item.image_id, item])
@@ -293,14 +346,6 @@ Page({
                 if (a.isLiked !== b.isLiked) return b.isLiked ? 1 : -1
                 return b.likeCount - a.likeCount
             })
-        timePoints.processData = Date.now();
-        console.timeEnd('处理数据');
-        console.log(`处理数据耗时: ${timePoints.processData - timePoints.processDataStart}ms`);
-
-
-        console.time('更新状态');
-        timePoints.updateStateStart = Date.now();
-
             // 6. 更新状态
             this.setData({
                 images: sortedImages.slice(0, this.data.pageSize),
@@ -309,10 +354,6 @@ Page({
                 isAllLoaded: sortedImages.length <= this.data.pageSize,
                 isLoading: false
             })
-        timePoints.updateState = Date.now();
-        console.timeEnd('更新状态');
-        console.log(`更新状态耗时: ${timePoints.updateState - timePoints.updateStateStart}ms`);
-
         } catch (error) {
             console.error('加载图片失败:', error)
             wx.showToast({
@@ -320,226 +361,190 @@ Page({
                 icon: 'none'
             })
         } finally {
-            timePoints.end = Date.now();
-        
-            // 输出完整的性能报告
-            console.log('性能报告:', {
-                总耗时: `${timePoints.end - timePoints.start}ms`,
-                获取文件列表: `${timePoints.getFiles - timePoints.getFilesStart}ms`,
-                获取URL和点赞信息: `${timePoints.getUrlsAndLikes - timePoints.getUrlsAndLikesStart}ms`,
-                处理数据: `${timePoints.processData - timePoints.processDataStart}ms`,
-                更新状态: `${timePoints.updateState - timePoints.updateStateStart}ms`
-            });
+
             this.setData({ isLoading: false })
             wx.hideLoading()
         }
     },
 
-    // 获取 showPool 目录下的文件
-    async getShowPoolFiles() {
-        try {
-            const db = wx.cloud.database()
-            const _ = db.command
-            const MAX_TOTAL = 40 // 最大总数
-            const BATCH_SIZE = 20 // 每批次获取数量
-            const BATCH_COUNT = Math.ceil(MAX_TOTAL / BATCH_SIZE) // 需要获取的批次数
-
-            // 1. 分批获取随机文件
-            let allRandomFiles = []
-            for (let i = 0; i < BATCH_COUNT && allRandomFiles.length < MAX_TOTAL; i++) {
-                const { list: batchFiles } = await db.collection('showPool_files')
-                    .aggregate()
-                    .sample({
-                        size: BATCH_SIZE
-                    })
-                    .end()
-
-                if (batchFiles && batchFiles.length > 0) {
-                    // 确保不重复添加相同的文件
-                    const newFiles = batchFiles.filter(newFile => 
-                        !allRandomFiles.some(existingFile => 
-                            existingFile.fileID === newFile.fileID
-                        )
-                    )
-                    allRandomFiles = [...allRandomFiles, ...newFiles]
-                }
-
-                console.log(`Batch ${i + 1} files: ${batchFiles?.length || 0}, Total unique files: ${allRandomFiles.length}`)
-            }
-
-            // 如果获取的文件数量超过了MAX_TOTAL，只保留MAX_TOTAL个
-            if (allRandomFiles.length > MAX_TOTAL) {
-                allRandomFiles = allRandomFiles.slice(0, MAX_TOTAL)
-            }
-
-            console.log('Total random files selected:', allRandomFiles.length)
-
-            if (allRandomFiles.length === 0) {
-                throw new Error('No files found')
-            }
-
-            // 2. 获取这些文件的点赞信息
-            const fileIds = allRandomFiles.map(file => file.fileID.split('/').pop())
-            const likeInfo = await db.collection('like_dataset')
-                .where({
-                    image_id: _.in(fileIds)
-                })
-                .get()
-
-            // 3. 构建点赞信息Map
-            const likeMap = new Map(likeInfo.data.map(item => [
-                item.image_id,
-                {
-                    count: item.count || 0,
-                    likedByUser: (item.like_openid || []).includes(this.data.openid)
-                }
-            ]))
-
-            // 4. 为文件添加权重信息
-            const weightedFiles = allRandomFiles.map(file => {
-                const fileName = file.fileID.split('/').pop()
-                const likeData = likeMap.get(fileName) || { count: 0, likedByUser: false }
-                return {
-                    fileID: file.fileID,
-                    weight: Math.log(likeData.count + 1) + 1,
-                    isLiked: likeData.likedByUser
-                }
-            })
-
-            // 5. 分离用户点赞的文件和其他文件
-            const likedFiles = weightedFiles.filter(file => file.isLiked)
-            const otherFiles = weightedFiles.filter(file => !file.isLiked)
-
-            // 6. 从其他文件中加权随机选择
-            const remainingCount = MAX_TOTAL - likedFiles.length
-            const selectedOtherFiles = remainingCount > 0 
-                ? this.weightedRandomSelect(otherFiles, remainingCount)
-                : []
-
-            // 7. 合并并返回结果
-            return [...likedFiles, ...selectedOtherFiles]
-
-        } catch (error) {
-            console.error('获取文件列表失败:', error)
-            console.log('错误详情:', error.stack)
-            // 发生错误时返回预生成的图片
-            return this.data.preImagesURL.map(url => ({
-                fileID: url
-            }))
-        }
-    },
-
-    // 加权随机选择函数
-    weightedRandomSelect(items, count) {
-        const selected = new Set()
-        const result = []
-        
-        // 计算总权重
-        const totalWeight = items.reduce((sum, item) => sum + item.weight, 0)
-        
-        while (result.length < count && result.length < items.length) {
-            let random = Math.random() * totalWeight
-            let sum = 0
-            
-            for (let i = 0; i < items.length; i++) {
-                if (selected.has(i)) continue
-                
-                sum += items[i].weight
-                if (random <= sum) {
-                    selected.add(i)
-                    result.push({
-                        fileID: items[i].fileID,
-                        isLiked: false
-                    })
-                    break
-                }
-            }
-            
-            // 如果没有选中任何项（可能由于舍入误差），随机选择一个未选中的项
-            if (result.length < selected.size) {
-                const remaining = items.filter((_, i) => !selected.has(i))
-                if (remaining.length > 0) {
-                    const randomItem = remaining[Math.floor(Math.random() * remaining.length)]
-                    result.push({
-                        fileID: randomItem.fileID,
-                        isLiked: false
-                    })
-                }
-            }
-        }
-        
-        return result
-    },
-    // 启用下拉刷新
-    onPullDownRefresh: async function() {
-        try {
-            await this.loadImagesFromCloud()
-        } finally {
-            // 停止下拉刷新动画
-            wx.stopPullDownRefresh()
-        }
-    },
     // 处理点赞
     async handleLike(e) {
         if (!this.checkLogin()) return
         
         const { index } = e.currentTarget.dataset
-        const image = this.data.images[index]
+        const originalImage = this.data.images[index]
+        // 先更新本地状态
+        const newIsLiked = !originalImage.isLiked
+        const newImages = [...this.data.images]
+        newImages[index] = {
+            ...originalImage,
+            isLiked: newIsLiked,
+            likeCount: newIsLiked ? originalImage.likeCount + 1 : originalImage.likeCount - 1
+        }
+        
+        this.setData({ images: newImages })
         
         try {
             const db = wx.cloud.database()
             const _ = db.command
             
-            // 更新点赞状态
-            const newIsLiked = !image.isLiked
-            const updateData = {
-                count: newIsLiked ? _.inc(1) : _.inc(-1)
-            }
-            
-            if (newIsLiked) {
-                updateData.like_openid = _.addToSet(this.data.openid)
-            } else {
-                updateData.like_openid = _.pull(this.data.openid)
-            }
-            
-            // 更新数据库
-            await db.collection('like_dataset').where({
-                image_id: image.id
-            }).update({
-                data: updateData
-            })
-            
-            // 如果记录不存在，创建新记录
-            const result = await db.collection('like_dataset').where({
-                image_id: image.id
+            // 先获取当前记录
+            const record = await db.collection('like_dataset').where({
+                image_id: originalImage.id
             }).get()
             
-            if (result.data.length === 0) {
+            if (record.data.length === 0) {
+                // 如果记录不存在，创建新记录
                 await db.collection('like_dataset').add({
                     data: {
-                        image_id: image.id,
+                        image_id: originalImage.id,
                         count: 1,
                         like_openid: [this.data.openid]
                     }
                 })
+            } else {
+                // 如果记录存在，更新记录
+                const currentRecord = record.data[0]
+                const currentLikeOpenids = currentRecord.like_openid || []
+                
+                let newLikeOpenids
+                if (newIsLiked) {
+                    // 添加点赞
+                    newLikeOpenids = [...new Set([...currentLikeOpenids, this.data.openid])]
+                } else {
+                    // 取消点赞
+                    newLikeOpenids = currentLikeOpenids.filter(id => id !== this.data.openid)
+                }
+                
+                // 更新数据库，确保count等于like_openid的长度
+                await db.collection('like_dataset').where({
+                    image_id: originalImage.id
+                }).update({
+                    data: {
+                        like_openid: newLikeOpenids,
+                        count: newLikeOpenids.length
+                    }
+                })
             }
-            
-            // 更新本地状态
-            const newImages = [...this.data.images]
-            newImages[index] = {
-                ...image,
-                isLiked: newIsLiked,
-                likeCount: newIsLiked ? image.likeCount + 1 : image.likeCount - 1
-            }
-            
-            this.setData({ images: newImages })
             
         } catch (error) {
             console.error('点赞操作失败:', error)
+            // 完全恢复到原始状态
+            newImages[index] = {
+                ...originalImage,
+                isLiked: originalImage.isLiked,
+                likeCount: originalImage.likeCount
+            }
+            this.setData({ images: newImages })
+            
             wx.showToast({
                 title: '操作失败',
                 icon: 'none'
             })
         }
     },
-  })
+        // 启用下拉刷新
+        onPullDownRefresh: async function() {
+            try {
+                await this.loadImagesFromCloud()
+            } finally {
+                // 停止下拉刷新动画
+                wx.stopPullDownRefresh()
+            }
+        },
+
+        onShareAppMessage() {
+            const promise = new Promise(resolve => {
+                setTimeout(() => {
+                    resolve({  
+                        title: '快来看看我发现的宝藏小程序！',
+                        path: '/pages/index/index'
+                    })
+                }, 500)  
+            })
+        
+            return {
+                title: '快来看看我发现的宝藏小程序！',  
+                path: '/pages/index/index/',
+
+                promise
+            }
+        },
+        handleImageLongPress() {
+            const that = this;
+            wx.showActionSheet({
+              itemList: ['保存图片'],
+              success(res) {
+                if (res.tapIndex === 0) {
+                  wx.getSetting({
+                    success(res) {
+                      if (!res.authSetting['scope.writePhotosAlbum']) {
+                        wx.authorize({
+                          scope: 'scope.writePhotosAlbum',
+                          success() {
+                            that.saveImage();
+                          },
+                          fail() {
+                            wx.showModal({
+                              title: '提示',
+                              content: '需要您授权保存图片到相册',
+                              success(res) {
+                                if (res.confirm) {
+                                  wx.openSetting();
+                                }
+                              }
+                            });
+                          }
+                        });
+                      } else {
+                        that.saveImage();
+                      }
+                    }
+                  });
+                }
+              }
+            });
+          },
+        
+          saveImage() {
+            wx.showLoading({
+              title: '保存中...',
+            });
+            
+            console.log("this.data.enlargedImage.url: ", this.data.enlargedImage.url)
+        
+            wx.downloadFile({
+              url: this.data.enlargedImage.url,
+              success: (res) => {
+                if (res.statusCode === 200) {
+                  wx.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath,
+                    success: () => {
+                      wx.hideLoading();
+                      wx.showToast({
+                        title: '保存成功',
+                        icon: 'success'
+                      });
+                    },
+                    fail: () => {
+                      wx.hideLoading();
+                      wx.showToast({
+                        title: '保存失败',
+                        icon: 'none'
+                      });
+                    }
+                  });
+                }
+              },
+              fail: () => {
+                wx.hideLoading();
+                wx.showToast({
+                  title: '下载失败',
+                  icon: 'none'
+                });
+              }
+            });
+          },
+          })
+        
+

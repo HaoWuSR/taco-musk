@@ -21,11 +21,11 @@
     </view>
 
     <!-- 中间内容区域 -->
-    <view class="content" style="height: 999rpx; display: flex; box-sizing: border-box; width: 606rpx">
+    <view class="content" style="height: 999rpx; display: flex; box-sizing: border-box; width: 625rpx">
         <view class="loading-container" wx:if="{{isLoading}}">
             <view class="loading-circle"></view>
         </view>
-        <image 
+        <image style="width: 652rpx; display: block; box-sizing: border-box" 
             wx:if="{{!isLoading && imageUrl}}" 
             src="{{imageUrl}}" 
             mode="aspectFit" 
@@ -34,12 +34,11 @@
         />
     </view>
     <view class="mask" wx:if="{{showEnlarged}}" bindtap="handleMaskTap">
-        <image 
-            src="{{imageUrl}}" 
-            mode="aspectFit" 
-            class="enlarged-image"
-            bindtap="preventBubble"
-        />
+        <view class="enlarged-container" catchtap="preventBubble">
+            <image src="{{imageUrl}}" 
+                   mode="widthFix"
+                   bindlongpress="handleImageLongPress"/>
+        </view>
     </view>
 
     <!-- 底部按钮区域 -->
